@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/LibraryBuilder/ProjectLibrary/EnterpriseResources/Schemas/DBLog/Schema.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/LibraryBuilder/ProjectLibrary/EnterpriseResources/Schemas/DBLog/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="DBLogTable">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AuditLog"/>
+				<xs:element ref="FaultLog"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AuditLog">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="UniqueKey" type="xs:string"/>
+				<xs:element name="TimeStamp" type="xs:string"/>
+				<xs:element name="MedReqPayload" type="xs:string"/>
+				<xs:element name="MedResPayload" type="xs:string"/>
+				<xs:element name="ProcessPayload" type="xs:string"/>
+				<xs:any namespace="##any" processContents="lax" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FaultLog">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="UniqueKey" type="xs:string"/>
+				<xs:element name="TimeStamp" type="xs:string"/>
+				<xs:element name="Msg" type="xs:string"/>
+				<xs:element name="MsgCode" type="xs:string"/>
+				<xs:element name="ProcessStack" type="xs:string"/>
+				<xs:element name="ErrorData" type="xs:string"/>
+				<xs:any namespace="##any" processContents="lax" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

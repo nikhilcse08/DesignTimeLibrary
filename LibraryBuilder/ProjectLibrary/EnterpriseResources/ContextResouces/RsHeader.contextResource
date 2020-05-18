@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BWSharedResource xmlns:pfx="http://xmlns.example.com/1469152452859">
+    <name>RsHeader</name>
+    <resourceType>service.context.definition</resourceType>
+    <config xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsdString wsMsgRef="pfx:RsHeader"/>
+    </config>
+</BWSharedResource>

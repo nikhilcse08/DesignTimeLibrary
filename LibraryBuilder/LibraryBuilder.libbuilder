@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Repository:repository xmlns:Repository="http://www.tibco.com/xmlns/repo/types/2002">
+    <name name="LibraryBuilder">
+        <version>26</version>
+        <author>GoForNik</author>
+        <fileLocation>C:\Users\GoForNik\Desktop\Work\TIBCO\BW\ProjectFiles\Library\ProjectLibrary.projlib</fileLocation>
+        <resources>/ProjectLibrary/EnterpriseResources/ContextResouces/RqHeader.contextResource,/ProjectLibrary/EnterpriseResources/ContextResouces/RsHeader.contextResource,/ProjectLibrary/EnterpriseResources/HTTPConnections/GenericHttpConnection.sharedhttp,/ProjectLibrary/EnterpriseResources/HTTPConnections/SoapHttpConnection.sharedhttp,/ProjectLibrary/EnterpriseResources/JDBCConnections/LocalDBConnection.sharedjdbc,/ProjectLibrary/EnterpriseResources/JMSConnections/LocalJMSConnection.sharedjmscon,/ProjectLibrary/EnterpriseResources/JavaResources/Auth_globalInstance.serviceagent,/ProjectLibrary/EnterpriseResources/JavaResources/MedUriGlobalInstance.serviceagent,/ProjectLibrary/EnterpriseResources/JavaResources/ProjectJars.aliaslib,/ProjectLibrary/EnterpriseResources/Processes/Java/AuthorizationValidation.process,/ProjectLibrary/EnterpriseResources/Processes/Java/MedURIValidation.process,/ProjectLibrary/EnterpriseResources/Processes/Java/SetAuthData.process,/ProjectLibrary/EnterpriseResources/Processes/Java/setMedURI.process,/ProjectLibrary/EnterpriseResources/Processes/Logger/AuditLogger.process,/ProjectLibrary/EnterpriseResources/Processes/Logger/FaultLogger.process,/ProjectLibrary/EnterpriseResources/Schemas/DBLog/DBLogTable.xsd,/ProjectLibrary/EnterpriseResources/Schemas/Header/HeaderFault.xsd,/ProjectLibrary/EnterpriseResources/WSDLs/GenericWSDL.wsdl</resources>
+    </name>
+</Repository:repository>

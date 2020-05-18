@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/LibraryBuilder/ProjectLibrary/EnterpriseResources/Schemas/Header/HeaderFault.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/LibraryBuilder/ProjectLibrary/EnterpriseResources/Schemas/Header/HeaderFault.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="HeaderInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RqHeader"/>
+				<xs:element ref="RsHeader"/>
+				<xs:element ref="Fault"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RqHeader">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TimeStamp" type="xs:string" minOccurs="0"/>
+				<xs:element name="UniqueID" type="xs:string" minOccurs="0"/>
+				<xs:element name="CountryCode" type="xs:string"/>
+				<xs:element name="UserID" type="xs:string"/>
+				<xs:element name="Channel" type="xs:string"/>
+				<xs:element name="version" type="xs:string" minOccurs="0"/>
+				<xs:any namespace="##any" processContents="lax" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RsHeader">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="UniqueId" type="xs:string"/>
+				<xs:element name="CountryCode" type="xs:string"/>
+				<xs:element name="UserID" type="xs:string"/>
+				<xs:element name="Channel" type="xs:string"/>
+				<xs:element name="RequestTimeStamp" type="xs:string"/>
+				<xs:element name="ResponseTimeStamp" type="xs:string"/>
+				<xs:element name="version" type="xs:string" minOccurs="0"/>
+				<xs:any namespace="##any" processContents="lax" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Fault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="type" type="xs:string"/>
+				<xs:element name="Code" type="xs:string"/>
+				<xs:element name="Detail" type="xs:string"/>
+				<xs:element name="MoreDetail">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="Name" type="xs:string"/>
+							<xs:element name="Value" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:any namespace="##any" processContents="lax" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

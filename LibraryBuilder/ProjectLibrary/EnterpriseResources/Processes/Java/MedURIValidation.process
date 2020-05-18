@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:DBRetrive="java://ProjectData.GeneralFunction" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns1="www.tibco.com/plugin/java/JavaMethodActivityOutput" xmlns:ns="www.tibco.com/plugin/java/JavaMethodActivityInput" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:trial="java://ProjectData.Local_MedURIInfo">
+    <pd:name>ProjectLibrary/EnterpriseResources/Processes/Java/MedURIValidation.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType>
+        <xsd:element name="MedURI">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="CountryCode" type="xsd:string"/>
+                    <xsd:element name="Enviroment" type="xsd:string"/>
+                    <xsd:element name="SoapAction" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+    </pd:startType>
+    <pd:startX>150</pd:startX>
+    <pd:startY>64</pd:startY>
+    <pd:returnBindings>
+        <MedURI>
+            <requestQueue>
+                <xsl:value-of select="DBRetrive:getResolver($Start/MedURI/CountryCode, $Start/MedURI/Enviroment, $Start/MedURI/SoapAction)"/>
+            </requestQueue>
+        </MedURI>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType>
+        <xsd:element name="MedURI">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="requestQueue" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+    </pd:endType>
+    <pd:endX>595</pd:endX>
+    <pd:endY>70</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1469540977413</pd:targetNamespace>
+    <pd:activity name="Java Method">
+        <pd:type>com.tibco.plugin.java.JavaMethodActivity</pd:type>
+        <pd:resourceType>ae.activities.JavaMethodActivity</pd:resourceType>
+        <pd:x>286</pd:x>
+        <pd:y>65</pd:y>
+        <config>
+            <ConstructDeclaredClass>false</ConstructDeclaredClass>
+            <CacheConstructedClass>false</CacheConstructedClass>
+            <InvokeCleanupMethod>false</InvokeCleanupMethod>
+            <MethodInfo>
+                <classLocation>c:/users/gofornik/desktop/work/ecclipse/jarfile/projectdata.jar</classLocation>
+                <classPath>/ProjectLibrary/EnterpriseResources/JavaResources/ProjectJars.aliaslib</classPath>
+                <className>ProjectData.Local_MedURIInfo</className>
+                <methodName>getRequestQueue</methodName>
+                <methodReturn>java.lang.String</methodReturn>
+                <methodParameter>java.lang.String</methodParameter>
+                <methodParameter>java.lang.String</methodParameter>
+                <methodParameter>java.lang.String</methodParameter>
+            </MethodInfo>
+        </config>
+        <pd:inputBindings>
+            <ns:JavaMethodActivityInput>
+                <MethodParameters>
+                    <Parameter1>
+                        <xsl:value-of select="$Start/MedURI/CountryCode"/>
+                    </Parameter1>
+                    <Parameter2>
+                        <xsl:value-of select="$Start/MedURI/Enviroment"/>
+                    </Parameter2>
+                    <Parameter3>
+                        <xsl:value-of select="$Start/MedURI/SoapAction"/>
+                    </Parameter3>
+                </MethodParameters>
+            </ns:JavaMethodActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="Java-Method-1">
+        <pd:type>com.tibco.plugin.java.JavaMethodActivity</pd:type>
+        <pd:resourceType>ae.activities.JavaMethodActivity</pd:resourceType>
+        <pd:x>430</pd:x>
+        <pd:y>67</pd:y>
+        <config>
+            <ConstructDeclaredClass>false</ConstructDeclaredClass>
+            <CacheConstructedClass>false</CacheConstructedClass>
+            <InvokeCleanupMethod>false</InvokeCleanupMethod>
+            <MethodInfo>
+                <classLocation>c:/users/gofornik/desktop/work/ecclipse/jarfile/projectdata.jar</classLocation>
+                <classPath>/ProjectLibrary/EnterpriseResources/JavaResources/ProjectJars.aliaslib</classPath>
+                <className>ProjectData.Local_MedURIInfo</className>
+                <methodName>getResolver</methodName>
+                <methodReturn>java.lang.String</methodReturn>
+                <methodParameter>java.lang.String</methodParameter>
+                <methodParameter>java.lang.String</methodParameter>
+                <methodParameter>java.lang.String</methodParameter>
+            </MethodInfo>
+        </config>
+        <pd:inputBindings>
+            <ns:JavaMethodActivityInput>
+                <MethodParameters>
+                    <Parameter1>
+                        <xsl:value-of select="$Start/MedURI/CountryCode"/>
+                    </Parameter1>
+                    <Parameter2>
+                        <xsl:value-of select="$Start/MedURI/Enviroment"/>
+                    </Parameter2>
+                    <Parameter3>
+                        <xsl:value-of select="$Start/MedURI/SoapAction"/>
+                    </Parameter3>
+                </MethodParameters>
+            </ns:JavaMethodActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Java Method</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Java Method</pd:from>
+        <pd:to>Java-Method-1</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Java-Method-1</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

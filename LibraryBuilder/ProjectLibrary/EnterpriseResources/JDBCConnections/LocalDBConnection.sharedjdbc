@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BWSharedResource>
+    <name>LocalDBConnection</name>
+    <resourceType>ae.shared.JDBCSharedResource</resourceType>
+    <config>
+        <driver>%%EnterpriseResources/Resources/LocalDBConnection/JDBCDriver%%</driver>
+        <maxConnections>%%EnterpriseResources/Resources/LocalDBConnection/MaxConnection%%</maxConnections>
+        <loginTimeout>%%EnterpriseResources/Resources/LocalDBConnection/LoginTimeOut%%</loginTimeout>
+        <connectionType>JDBC</connectionType>
+        <UseSharedJndiConfig>false</UseSharedJndiConfig>
+        <location>%%EnterpriseResources/Resources/LocalDBConnection/DatabaseURL%%</location>
+        <user>%%EnterpriseResources/Resources/LocalDBConnection/UserName%%</user>
+        <password>%%EnterpriseResources/Resources/LocalDBConnection/Password%%</password>
+    </config>
+</BWSharedResource>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:ns2="http://www.tibco.com/schemas/LibraryBuilder/ProjectLibrary/EnterpriseResources/Schemas/Header/HeaderFault.xsd" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.tibco.com/schemas/LibraryBuilder/ProjectLibrary/EnterpriseResources/Schemas/Header/Schema.xsd" xmlns:tns="http://xmlns.example.com/1469152452859" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.example.com/1469152452859">
+    <import namespace="http://www.tibco.com/schemas/LibraryBuilder/ProjectLibrary/EnterpriseResources/Schemas/Header/HeaderFault.xsd" location="../Schemas/Header/HeaderFault.xsd"/>
+    <message name="RqHeader">
+        <part name="RqHeader" element="ns2:RqHeader"/>
+    </message>
+    <message name="RsHeader">
+        <part name="RsHeader" element="ns2:RsHeader"/>
+    </message>
+    <message name="FaultRs">
+        <part name="FaultRs" element="ns2:Fault"/>
+    </message>
+</definitions>
